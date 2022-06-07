@@ -1,0 +1,53 @@
+<html>
+   <head> 
+      <meta name="viewport" content="width=device-width, initial-scale=1"> 
+   </head> 
+   <body> 
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script> 
+      <button onclick="downloadImage();">save as image</button> 
+      <canvas id="ctx"></canvas> 
+      <script type="text/javascript">
+var chart_variable = new Chart(ctx, {
+   type: 'line',//from  w ww.j  a  v a 2s.com
+   data: {
+      labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May'],
+      datasets: [{
+         label: 'My First Dataset',
+         data: [3, 1, 4, 2, 5],
+         backgroundColor: 'rgba(0, 119, 290, 0.2)',
+         borderColor: 'rgba(0, 119, 290, 0.6)'
+      }]
+   },
+   options: {
+      title: {
+         display: true,
+         text: 'Chart Title'
+      },
+      scales: {
+         yAxes: [{
+            ticks: {
+               beginAtZero: true,
+               stepSize: 1
+            }
+         }]
+      }
+   }
+});
+function downloadImage() {
+   chart_variable.options.title.text = 'New Chart Title';
+   chart_variable.update({
+      duration: 0
+   });
+   var link = document.createElement('a');
+   link.href = chart_variable.toBase64Image();
+   link.download = 'myImage.png';
+   link.click();
+   chart_variable.options.title.text = 'Chart Title';
+   chart_variable.update({
+      duration: 0
+   });
+}
+
+      </script>  
+   </body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.js"></script>
+		<link rel="Graficas.css" href="Graficas.css">
+		
+    </head>
+    <body>
+
+				<input type="text" id="input-url" size="50" value="https://raw.githubusercontent.com/daniels36999/Examen-2021/main/Tabla.html"></input>
+				<canvas id="myChart1" width="600" height="200"></canvas>
+
+
+    </body>
+	
+	
+    <script>
+        var ctx= document.getElementById("myChart1").getContext("2d");
+        var myChart= new Chart(ctx,{
+            type:"line",
+            data:{
+                labels:['col1','col2','col3','col3','col3','col3','col2'],
+                datasets:[{
+                        label:'TEMPERATURA CORPORAL',
+                        data:[10,9,15,17,17,17],
+                        backgroundColor: '#93DE78',
+						borderColor: "#43FF01",
+						pointBackgroundColor: "#124500",
+						pointBorderColor: "#124500",	
+							}]},
+            options:{
+			    responsive: false,
+			<!-- 	maintainAspectRatio: false, -->
+
+                scales:{
+                    yAxes:[{
+						scaleLabel: {
+							display: true,
+							labelString: "TEMPERATURA [°C]",},
+						ticks:{
+							beginAtZero:true							
+                            }}],				
+                    xAxes:[{
+						scaleLabel: {
+							display: true,
+							labelString: "FECHA [dd/mm/aa]",
+						}}]												
+							}}});
+    </script>
+</html>
