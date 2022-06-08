@@ -1,13 +1,17 @@
 <!doctype html>
-<html lang="es">
-	<head>
-		<meta charset="UTF-8">
-		<meta name="viewport"content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-		<meta http-equiv="X-UA-Compatible" content="ie=edge">	
-		<title>HISTORIAL IoMT</title>	
-		<style type="text/css">#oli  {display: none;}</style>
-		
-		<style>
+<html lang="en">
+  <head>
+  	<title>Login 10</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap" rel="stylesheet">
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	
+	<link rel="stylesheet" href="css/style.css">
+	
+			<style type="text/css">
         body {
             background-color: LIGHTGREY;
         }
@@ -20,6 +24,7 @@
             resize: both;
             position: relative;
             z-index: 2;
+			display: none;
         }
           
         iframe {
@@ -28,447 +33,110 @@
             border: none;
         }
     </style>
-		
-		<script   src="https://code.jquery.com/jquery-2.2.4.min.js"integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="   crossorigin="anonymous"></script>
-	   <!-- LIBRERIAS EXCEL-->
-		<script src="https://unpkg.com/xlsx@0.16.9/dist/xlsx.full.min.js"></script>
-		<script src="https://unpkg.com/file-saverjs@latest/FileSaver.min.js"></script>
-		<script src="https://unpkg.com/tableexport@latest/dist/js/tableexport.min.js"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.js"></script>
-		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+	
+	<script   src="https://code.jquery.com/jquery-2.2.4.min.js"   integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="   crossorigin="anonymous"></script>
 
 	</head>
-
-	<body>
-		
-				<div id="target">
-					<iframe src="/Base/index.html"></iframe>
+	<body class="img js-fullheight" style="background-image: url(images/bg.jpg);">
+	<section class="ftco-section">
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-md-6 text-center mb-5">
+					<h2 class="heading-section">REPOSITORIO IOMT</h2>
 				</div>
-	
-		
-	</body>
-	
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-	<script src='https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.3/jspdf.debug.js'></script>
-			
-	<!-- SCRIPT -------------------------------------------------------------------------- -->		
-	<!-- SCRIPT PARA EXPORTAR -->
-	<script>
-		const $btnExportar = document.querySelector("#btnExportar"),
-			$tabla = document.querySelector("#tabla");
-		$btnExportar.addEventListener("click", function() {
-			let tableExport = new TableExport($tabla, {
-				exportButtons: false, // No queremos botones
-				filename: "Reporte IoMT", //Nombre del archivo de Excel
-				sheetname: "IoMT", //Título de la hoja
-			});
-			let datos = tableExport.getExportData();
-			let preferenciasDocumento = datos.tabla.xlsx;
-			tableExport.export2file(preferenciasDocumento.data, preferenciasDocumento.mimeType, preferenciasDocumento.filename, preferenciasDocumento.fileExtension, preferenciasDocumento.merges, preferenciasDocumento.RTL, preferenciasDocumento.sheetname);
-		});
-	</script>		
-			
+			</div>
+			<div class="row justify-content-center">
+				<div class="col-md-6 col-lg-4">
+					<div class="login-wrap p-0">
+		      	<h3 class="mb-4 text-center">Ingrese sus Datos</h3>
+		      	<form action="#" class="signin-form">
+		      		<div class="form-group">
+		      			<input id="nombre" type="text" class="form-control" placeholder="Nombres" required>
+		      		</div>
+	            <div class="form-group">
+		      			<input id="apellido" type="text" class="form-control" placeholder="Apellidos" required>
+		      		</div>
+				<select id="curso"  class="form-control"class="text-dark">
+					<option disabled selected=""><h3> Seleccione El Curso</h3></option>
+					<option class="text-dark"> Inicial 1 </option>
+					<option class="text-dark"> Inicial 2 </option>
+					<option class="text-dark"> Primer año de Educacion Básica  </option>
+					<option class="text-dark"> Segundo año de Educacion Básica </option>
+					<option class="text-dark"> Tercer año de Educacion Básica </option>
+					<option class="text-dark"> Cuarto año de Educacion Básica </option>
+					<option class="text-dark"> Quinto año de Educacion Básica </option>
+					<option class="text-dark"> Sexto año de Educacion Básica </option>
+					<option class="text-dark"> Septimo año de Educacion Básica </option>
+					<option class="text-dark"> Octavo año de Educacion Básica </option>
+					<option class="text-dark"> Noveno año de Educacion Básica </option>
+					<option class="text-dark"> Décimo año de Educacion Básica </option>
+					<option class="text-dark"> Primer año de Bachillerato </option>
+					<option class="text-dark"> Segundo año de Bachillerato </option>
+					<option class="text-dark"> Tercer año de Bachillerato </option>
+					<option class="text-dark"> Alumnos de Básica Acelerado </option>
+					<option class="text-dark"> Personal Administrativo </option>
+					<option class="text-dark"> Docentes </option>
+					<option class="text-dark"> Otros </option>
+				</select><br>				
+					
+					
+	            <div class="form-group">
+	            	<button id="descargar1" type="submit" class="form-control btn btn-primary submit px-3">Mostrar Historial</button>
+	            </div>
 
-
-	<!-- GRAFICA TEMPERATURA -->
-	<!-- --------------------------------------------------------- -->
-	<script>
-		var Temp = "";       var Fec = "";
-		var Temperatura =[]; var Fecha =[];
-	    $("#btnGraficar").click(function() {
-			console.log("DESCARGANDOooo")
-		$(".GF").parent("tr").find(".GF").each(function() {
-		 Fec +=$(this).html()+",";
-		});
-		$(".GT").parent("tr").find(".GT").each(function() {
-		 Temp +=$(this).html()+",";
-		});
-		
-		Temp=Temp.split(',')
-		TempLen = Temp.length-1;
-		Fec=Fec.split(',')
-		for ( var i = 0; i < TempLen; i++ ) {
-			Temperatura[i]=Temp[i];
-			Fecha[i]=Fec[i];
-			}
-		var ctx= document.getElementById("GraTemperatura").getContext("2d");
-		let gradient=ctx.createLinearGradient(0,0,0,400);
-		gradient.addColorStop(0,"rgba(144,0,0,0.7)");
-		gradient.addColorStop(1,"rgba(200,0,0,0.3)");
-		var myChart= new Chart(ctx,{
-			type:"line", //<!--TIPO DE GRAFICA -->
-			data:{
-				labels:Fecha, //<!--DATO FECHA -->		
-				datasets:[{
-						label:'TEMPERATURA CORPORAL',
-						data:Temperatura, //<!--DATO TEMPERATURA -->
-						backgroundColor: gradient,
-						borderColor: "#000000",
-						borderWidth:4,
-							}]},
-			options:{
-				responsive: false,
-				title: {
-				 display: true,
-				 text: 'HISTORIAL DE LA TEMPERATURA CORPORAL'
-				  },
+	          </form>
+	          <p class="w-100 text-center">&mdash; Repositorio IoMT &mdash;</p>
+	          <div class="social d-flex text-center">
+	          	<a href="http://iomt-unach.herokuapp.com/#welcome" class="px-2 py-2 mr-md-1 rounded"><span class="ion-logo-facebook mr-2"></span> Regresar</a>
+	          </div>
+		      </div>
+				</div>
+			</div>
+		</div>
+			<div id="target">
+				<iframe id="myIframe">
+					<p>Your browser does not support iframes.</p>
+				</iframe>
+			</div>
 				
-				scales:{
-					yAxes:[{
-						scaleLabel: {
-							display: true,
-							labelString: "TEMPERATURA [°C]",},
-						ticks:{
-							beginAtZero:true							
-							}}],				
-					xAxes:[{
-						scaleLabel: {
-							display: true,
-							labelString: "FECHA [dd/mm/aa]",
-						}}]												
-			}}});	
-		document.getElementById('oli').style.display = 'block';
-		$("#DescTemp").click(function() {
-		   myChart.options.title.text = 'Temperatura Corporal - Historial';
-		   myChart.update({
-			  duration: 0
-		   });
-		   var link = document.createElement('a');
-		   link.href = myChart.toBase64Image();
-		   link.download = 'Temperatura Corporal.png';
-		   link.click();
-		   myChart.options.title.text = 'HISTORIAL: TEMPERATURA CORPORAL';
-		   myChart.update({
-			  duration: 0
-		   });
-		});	
-	});			
-	</script>
-	
-	<!-- GRAFICA PESO -->
-    <!-- --------------------------------------------------------- -->
-	<script>
-		var Pes = ""; var Fec = "";
-		var Peso =[]; var Fecha =[];
-		  $("#btnGraficar").click(function() {
-			$(".GF").parent("tr").find(".GF").each(function() {
-			 Fec +=$(this).html()+",";
-			});
-			$(".GP").parent("tr").find(".GP").each(function() {
-			 Pes +=$(this).html()+",";
-			});			
-			Pes=Pes.split(',')
-			PesLen = Pes.length-1;
-			Fec=Fec.split(',')
-			for ( var i = 0; i < PesLen; i++ ) {
-				Peso[i]=Pes[i];
-				Fecha[i]=Fec[i];
-				}
-			var ctx= document.getElementById("GraPeso").getContext("2d");
-			let gradient=ctx.createLinearGradient(0,0,0,400);
-			gradient.addColorStop(0,"rgba(0,144,0,0.7)");
-			gradient.addColorStop(1,"rgba(0,200,0,0.1)");
-			var myChart= new Chart(ctx,{
-				type:"line", //<!--TIPO DE GRAFICA -->
-				data:{
-					labels:Fecha, //<!--DATO FECHA -->		
-					datasets:[{
-							label:'PESO CORPORAL',
-							data:Peso, //<!--DATO Peso -->
-							backgroundColor: gradient,
-							borderColor: "#000000",
-							pointBackgroundColor: "#124500",
-							pointBorderColor: "#124500",	
-							borderWidth:4,
-								}]},
-				options:{
-					responsive: false,
-					title: {
-					 display: true,
-					 text: 'HISTORIAL: PESO CORPORAL'
-					  },
-					scales:{
-						yAxes:[{
-							scaleLabel: {
-								display: true,
-								labelString: "PESO [Kg]",},
-							ticks:{
-								beginAtZero:true							
-								}}],				
-						xAxes:[{
-							scaleLabel: {
-								display: true,
-								labelString: "FECHA [dd/mm/aa]",
-							}}]												
-				}}});	
-			$("#DescPes").click(function() {
-			   myChart.options.title.text = 'Peso Corporal - Historial';
-			   myChart.update({
-				  duration: 0
-			   });
-			   var link = document.createElement('a');
-			   link.href = myChart.toBase64Image();
-			   link.download = 'Peso Corporal.png';
-			   link.click();
-			   myChart.options.title.text = 'HISTORIAL: PESO CORPORAL';
-			   myChart.update({
-				  duration: 0
-			   });
-			});		
-		  });
-	</script>
 
-	<!-- GRAFICA ESTATURA -->
-	<!-- --------------------------------------------------------- -->
-	<script>
-		var Est = ""; var Fec = "";
-		var Estatura =[]; var Fecha =[];
-	  $("#btnGraficar").click(function() {
-		$(".GF").parent("tr").find(".GF").each(function() {
-		 Fec +=$(this).html()+",";
-		});
-		$(".GE").parent("tr").find(".GE").each(function() {
-		 Est +=$(this).html()+",";
-		});		
-		Est=Est.split(',')
-		EstLen = Est.length-1;
-		Fec=Fec.split(',')
-		for ( var i = 0; i < EstLen; i++ ) {
-			Estatura[i]=Est[i];
-			Fecha[i]=Fec[i];
-			}
-		var ctx= document.getElementById("GraEstatura").getContext("2d");
-		let gradient=ctx.createLinearGradient(0,0,0,400);
-		gradient.addColorStop(0,"rgba(0,0,144,0.7)");
-		gradient.addColorStop(1,"rgba(0,0,200,0.1)");
-		var myChart= new Chart(ctx,{
-			type:"line", //<!--TIPO DE GRAFICA -->
-			data:{
-				labels:Fecha, //<!--DATO FECHA -->		
-				datasets:[{
-						label:'ESTATURA CORPORAL',
-						data:Estatura, //<!--DATO Estatura -->
-						backgroundColor: gradient,
-						borderColor: "#000000",
-						pointBackgroundColor: "#124500",
-						pointBorderColor: "#124500",
-						borderWidth:4,					
-							}]},
-			options:{
-				responsive: false,
-				title: {
-				 display: true,
-				 text: 'HISTORIAL: ESTATURA CORPORAL'
-				  },
-				scales:{
-					yAxes:[{
-						scaleLabel: {
-							display: true,
-							labelString: "ESTATURA [m]",},
-						ticks:{
-							beginAtZero:true							
-							}}],				
-					xAxes:[{
-						scaleLabel: {
-							display: true,
-							labelString: "FECHA [dd/mm/aa]",
-						}}]												
-			}}});				
-		$("#DescEst").click(function() {
-		   myChart.options.title.text = 'Estatura Corporal - Historial';
-		   myChart.update({
-			  duration: 0
-		   });
-		   var link = document.createElement('a');
-		   link.href = myChart.toBase64Image();
-		   link.download = 'Estatura Corporal.png';
-		   link.click();
-		   myChart.options.title.text = 'HISTORIAL: ESTATURA CORPORAL';
-		   myChart.update({
-			  duration: 0
-		   });
-		});
-	  });
-	</script>
+		
+	</section>
+	
 	
 
-	<!-- GRAFICA IMC -->
-	<!-- --------------------------------------------------------- -->
+	
 	<script>
-		var Im = ""; var Fec = "";
-		var IMC =[]; var Fecha =[];
-		  $("#btnGraficar").click(function() {
-			$(".GF").parent("tr").find(".GF").each(function() {
-			 Fec +=$(this).html()+",";
-			});
-			$(".GI").parent("tr").find(".GI").each(function() {
-			 Im +=$(this).html()+",";
-			});			
-			Im=Im.split(',')
-			ImcLen = Im.length-1;
-			Fec=Fec.split(',')
-			for ( var i = 0; i < ImcLen; i++ ) {
-				IMC[i]=Im[i];
-				Fecha[i]=Fec[i];
-				}
-			var ctx= document.getElementById("GraImc").getContext("2d");
-			let gradient=ctx.createLinearGradient(0,0,0,400);
-			gradient.addColorStop(0,"rgba(200,0,255,0.8)");
-			gradient.addColorStop(1,"rgba(126, 2, 252, 0.3)");
-			var myChart= new Chart(ctx,{
-				type:"line", //<!--TIPO DE GRAFICA -->
-				data:{
-					labels:Fecha, //<!--DATO FECHA -->		
-					datasets:[{
-							label:'INDICE DE MASA CORPORAL',
-							data:IMC, //<!--DATO IMC -->
-							backgroundColor:gradient,
-							borderColor: "#000000",
-							pointBackgroundColor: "#124500",
-							pointBorderColor: "#124500",
-							borderWidth:4,
-								}]},
-				options:{
-					responsive: false,
-					title: {
-					 display: true,
-					 text: 'HISTORIAL: INDICE DE MASA CORPORAL'
-					  },
-					scales:{
-						yAxes:[{
-							scaleLabel: {
-								display: true,
-								labelString: "IMC [Kg/m^2]",},
-							ticks:{
-								beginAtZero:true							
-								}}],				
-						xAxes:[{
-							scaleLabel: {
-								display: true,
-								labelString: "FECHA [dd/mm/aa]",
-							}}]												
-				}}});	
-			$("#DescImc").click(function() {
-			   myChart.options.title.text = 'IMC - Historial';
-			   myChart.update({
-				  duration: 0
-			   });
-			   var link = document.createElement('a');
-			   link.href = myChart.toBase64Image();
-			   link.download = 'IMC.png';
-			   link.click();
-			   myChart.options.title.text = 'HISTORIAL: INDICE DE MASA CORPORAL';
-			   myChart.update({
-				  duration: 0
-			   });
-			});	
-		  });
+	$(function() 
+	{
+	$("#descargar1").click( function()
+	{
+	   //var GITURL = "https://raw.githubusercontent.com/daniels36999/IoMT-BD/main/Datos%20Almacenados/";
+
+	   var NOMBRE1 =$("#nombre").val();
+	   var APELLIDO1 =$("#apellido").val();
+	   var CURSO1 = $("#curso").val();
+	  
+	   
+	   //var TXT_URL = GITURL+CURSO1+"/"+NOMBRE1+"%20"+APELLIDO1+".html?raw=true";
+	   var TXT_URL ="/Datos Almacenados"+"/"+CURSO1+"/"+NOMBRE1+" "+APELLIDO1+".html";
+	   document.getElementById('target').style.display = 'block';
+		document.getElementById('myIframe').src=TXT_URL;
+		console.log(TXT_URL);
+
+	   });
+	});
+
 	</script>
-	<!-- GRAFICA O2Sat -->
-	<!-- --------------------------------------------------------- -->
-	<script>
-		var O2S = "";  var Fec = "";
-		var O2Sat =[]; var Fecha =[];
-		  $("#btnGraficar").click(function() {
-			$(".GF").parent("tr").find(".GF").each(function() {
-			 Fec +=$(this).html()+",";
-			});
-			$(".GO").parent("tr").find(".GO").each(function() {
-			 O2S +=$(this).html()+",";
-			});			
-			O2S=O2S.split(',')
-			O2SLen = O2S.length-1;
-			Fec=Fec.split(',')
-			for ( var i = 0; i < O2SLen; i++ ) {
-				O2Sat[i]=O2S[i];
-				Fecha[i]=Fec[i];
-				}
-			var ctx= document.getElementById("GraO2Sat").getContext("2d");
-			let gradient=ctx.createLinearGradient(0,0,0,400);
-			gradient.addColorStop(0,"rgba(255, 248, 8, 0.9)");
-			gradient.addColorStop(1,"rgba(255, 248, 8, 0.2)");
-			var myChart= new Chart(ctx,{
-				type:"line", //<!--TIPO DE GRAFICA -->
-				data:{
-					labels:Fecha, //<!--DATO FECHA -->		
-					datasets:[{
-							label:'O2SAT',
-							data:O2Sat, //<!--DATO O2Sat -->
-							backgroundColor: gradient,
-							borderColor: "#000000",
-							pointBackgroundColor: "#124500",
-							pointBorderColor: "#124500",	
-								}]},
-				options:{
-					responsive: false,
-					title: {
-					 display: true,
-					 text: 'HISTORIAL: SATURACION DE OXIGENO EN LA SANGRE'
-					  },
-					scales:{
-						yAxes:[{
-							scaleLabel: {
-								display: true,
-								labelString: "O2SAT [%]",},
-							ticks:{
-								beginAtZero:true							
-								}}],				
-						xAxes:[{
-							scaleLabel: {
-								display: true,
-								labelString: "FECHA [dd/mm/aa]",
-							}}]												
-				}}});	
-			$("#DescO2Sat").click(function() {
-			   myChart.options.title.text = 'O2Sat - Historial';
-			   myChart.update({
-				  duration: 0
-			   });
-			   var link = document.createElement('a');
-			   link.href = myChart.toBase64Image();
-			   link.download = 'O2SAT.png';
-			   link.click();
-			   myChart.options.title.text = 'HISTORIAL: SATURACION DE OXIGENO EN LA SANGRE';
-			   myChart.update({
-				  duration: 0
-			   });
-			});				
-		  });
-	</script>	
-	<!-- EXPORTAR TODOS LOS GRAFICOS -->
-	<!-- ------------------------------------------------- -->
-	<script>
-		$('#DescPDF').click(function(event) { 
-			var reportPageHeight = 1500;
-			var reportPageWidth = 2200;
-			var pdfCanvas = $('<canvas />').attr({
-				id: "canvaspdf",
-				width: reportPageWidth,
-				height: reportPageHeight
-			});	  
-			  var pdfctx = $(pdfCanvas)[0].getContext('2d');
-			  var pdfctxX = 0;
-			  var pdfctxY = 0;
-			  var buffer = 100;					  
-		  $("canvas").each(function(index) {
-			var canvasHeight = $(this).innerHeight();
-			var canvasWidth = $(this).innerWidth();			
-			pdfctx.drawImage($(this)[0], pdfctxX, pdfctxY, canvasWidth, canvasHeight);
-			pdfctxX += canvasWidth + buffer;		
-			if (index % 2 === 1) {
-			  pdfctxX = 0;
-			  pdfctxY += canvasHeight + buffer;
-				}
-			 });
-			var pdf = new jsPDF('l', 'pt', [reportPageWidth, reportPageHeight]);
-			pdf.addImage($(pdfCanvas)[0], 'PNG', 0, 0);
-			pdf.save('Reporte Grafico IoMT.pdf');
-		});
-		function done(){
-		  alert("haha");
-		  var url=myLine.toBase64Image();
-		  document.getElementById("url").src=url;
-		}
-	</script> 	
+
+
+
+
+	<script src="js/jquery.min.js"></script>
+	<script src="js/popper.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/main.js"></script>
+
+	</body>
 </html>
-            
+
