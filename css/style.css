@@ -1600,7 +1600,7 @@ pre {
   background-color: #fff;
   background-clip: padding-box;
   border: 1px solid #ced4da;
-  border-radius: 0.25rem;
+  border-radius: 0.1rem;
   -webkit-transition: border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
   transition: border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
   -o-transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
@@ -1701,6 +1701,7 @@ textarea.form-control {
   height: auto; }
 
 .form-group {
+	height:40px;
   margin-bottom: 1rem; }
 
 .form-text {
@@ -5769,6 +5770,7 @@ button.bg-dark:focus {
   justify-content: flex-end !important; }
 
 .justify-content-center {
+	padding: 0em 0;
   -webkit-box-pack: center !important;
   -ms-flex-pack: center !important;
   justify-content: center !important; }
@@ -8171,10 +8173,10 @@ h1, h2, h3, h4, h5,
   color: #000; }
 
 .bg-primary {
-  background: #fbceb5 !important; }
+  background: #45C604 !important; }
 
 .ftco-section {
-  padding: 7em 0; }
+  padding: 3em 0; }
 
 .ftco-no-pt {
   padding-top: 0; }
@@ -8225,7 +8227,7 @@ h1, h2, h3, h4, h5,
 .form-control {
   background: transparent;
   border: none;
-  height: 50px;
+  height: 40px;
   color: white !important;
   border: 1px solid transparent;
   background: rgba(255, 255, 255, 0.08);
@@ -8331,7 +8333,7 @@ textarea.form-control {
   .btn:hover, .btn:active, .btn:focus {
     outline: none; }
   .btn.btn-primary {
-    background: #fbceb5 !important;
+    background: #45C604!important;
     border: 1px solid #fbceb5 !important;
     color: #000 !important; }
     .btn.btn-primary:hover {
