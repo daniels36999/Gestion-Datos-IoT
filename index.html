@@ -116,10 +116,17 @@
 	   var NOMBRE1 =$("#nombre").val();
 	   var APELLIDO1 =$("#apellido").val();
 	   var CURSO1 = $("#curso").val();
-	  
+	   var ESP ="";
+	   
+	   if (APELLIDO1.length<=0) {
+		  ESP ="";
+		} else {
+		  ESP =" ";
+		}
+	  length
 	   
 	   //var TXT_URL = GITURL+CURSO1+"/"+NOMBRE1+"%20"+APELLIDO1+".html?raw=true";
-	   var TXT_URL ="/Datos Almacenados"+"/"+CURSO1+"/"+NOMBRE1+" "+APELLIDO1+".html";
+	   var TXT_URL ="/Datos Almacenados"+"/"+CURSO1+"/"+NOMBRE1+ESP+APELLIDO1+".html";
 	   document.getElementById('target').style.display = 'block';
 		document.getElementById('myIframe').src=TXT_URL;
 		console.log(TXT_URL);
